@@ -214,7 +214,7 @@ type TcpProfile struct {
 	TailLossProbe            string `json:"tailLossProbe,omitempty"`
 	TcpOptions               string `json:"tcpOptions,omitempty"`
 	TimeWaitRecycle          string `json:"timeWaitRecycle,omitempty"`
-	TimeWaitTimeout          string `json:"timeWaitTimeout,omitempty"`
+	TimeWaitTimeout          int    `json:"timeWaitTimeout,omitempty"`
 	Timestamps               string `json:"timestamps,omitempty"`
 	VerifiedAccept           string `json:"verifiedAccept,omitempty"`
 }
@@ -943,6 +943,7 @@ type Monitors struct {
 // Monitor contains information about each individual monitor.
 type Monitor struct {
 	Name           string
+	Type           string
 	Partition      string
 	FullPath       string
 	Generation     int
@@ -1025,6 +1026,7 @@ type Profile struct {
 	Name      string `json:"name,omitempty"`
 	FullPath  string `json:"fullPath,omitempty"`
 	Partition string `json:"partition,omitempty"`
+	Type      string `json:"-"`
 	Context   string `json:"context,omitempty"`
 }
 
