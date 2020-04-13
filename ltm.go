@@ -1800,7 +1800,7 @@ func (b *BigIP) AddVirtualServer(config *VirtualServer) error {
 // GetVirtualServer retrieves a virtual server by name. Returns nil if the virtual server does not exist
 func (b *BigIP) GetVirtualServer(name string) (*VirtualServer, error) {
 	var vs VirtualServer
-	fmt.Printf("check for existing vs %s", name)
+	fmt.Printf("check for existing vs name %s \n", name)
 	err, ok := b.getForEntity(&vs, uriLtm, uriVirtual, name)
 	if err != nil {
 		return nil, err
