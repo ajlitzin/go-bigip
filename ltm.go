@@ -1800,7 +1800,6 @@ func (b *BigIP) AddVirtualServer(config *VirtualServer) error {
 // GetVirtualServer retrieves a virtual server by name. Returns nil if the virtual server does not exist
 func (b *BigIP) GetVirtualServer(name string) (*VirtualServer, error) {
 	var vs VirtualServer
-	fmt.Println("check for existing vs")
 	err, ok := b.getForEntity(&vs, uriLtm, uriVirtual, name)
 	if err != nil {
 		return nil, err
@@ -1809,14 +1808,12 @@ func (b *BigIP) GetVirtualServer(name string) (*VirtualServer, error) {
 		return nil, nil
 	}
 
-	fmt.Println("about to get for virtual server profiles")
 	profiles, err := b.VirtualServerProfiles(name)
 	if err != nil {
 		return nil, err
 	}
 	vs.Profiles = profiles.Profiles
 
-	fmt.Println("about to get for virtual policies")
 	policy_names, err := b.VirtualServerPolicyNames(name)
 	if err != nil {
 		return nil, err
