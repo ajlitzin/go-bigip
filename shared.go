@@ -8,9 +8,16 @@ import (
 	"time"
 )
 
+// Debug indicates that the program should print verbose debug information
+var Debug = false
+
 const (
 	uriClientSSL       = "client-ssl"
+	uriCookie          = "cookie"
 	uriDatagroup       = "data-group"
+	uriFastL4          = "fastl4"
+	uriFtp             = "ftp"
+	uriHash            = "hash"
 	uriHttp            = "http"
 	uriHttpCompression = "http-compression"
 	uriIRule           = "rule"
@@ -19,6 +26,7 @@ const (
 	uriMonitor         = "monitor"
 	uriNode            = "node"
 	uriOneConnect      = "one-connect"
+	uriPersistence     = "persistence"
 	uriPolicy          = "policy"
 	uriPool            = "pool"
 	uriPoolMember      = "members"
@@ -26,6 +34,7 @@ const (
 	uriRules           = "rules"
 	uriServerSSL       = "server-ssl"
 	uriSnatPool        = "snatpool"
+	uriSourceAddr      = "source-addr"
 	uriTcp             = "tcp"
 	uriUdp             = "udp"
 	uriVirtual         = "virtual"
