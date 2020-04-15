@@ -2,7 +2,7 @@ package bigip
 
 import (
 	"fmt"
-	// "github.com/scottdware/go-bigip"
+
 	"github.com/ajlitzin/go-bigip"
 )
 
